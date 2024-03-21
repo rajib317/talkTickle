@@ -1,0 +1,53 @@
+####Check-User Route
+POST http://localhost:6000/auth/check-user
+Content-Type: application/json
+
+{
+    "email":"rajib317@gmail.com"
+}
+####Register Route
+POST http://localhost:6000/auth/register
+Content-Type: application/json
+
+{
+    "email":"rajib317@gmail.com"
+}
+
+
+####Login Route
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "email":"rajib317@gmail.com",
+    "password": "12345608"
+}
+####Verify Pin Route
+POST http://localhost:3001/auth/verify-pin
+Content-Type: application/json
+
+{
+    "email": "rajib317@gmail.com",
+    "pin": "748903"
+}
+####Refresh Token Route
+POST http://localhost:3001/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTA2NzAwNDUsImV4cCI6MTc0MjIyNzY0NSwiYXVkIjoiMSIsImlzcyI6ImxvY2FsaG9zdCJ9.uMb49eJPjc3_C0RE6RIlN-xWVA_EyMYtU01AIBbQbDc"
+}
+
+
+####Set Password
+POST http://localhost:3001/auth/set-password
+Content-Type: application/json
+
+{
+    "email": "rajib317@gmail.com",
+    "password": "12345608"
+}
+
+####Testing a protected Route
+GET http://localhost:3001/auth/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDc5MzI1NTMsImV4cCI6MTcwNzkzMzE1MywiYXVkIjoiMiIsImlzcyI6ImxvY2FsaG9zdCJ9.AtEmMOLVEqQEeUIfhvTktfZ_hcejhUDVtV-xrovJhUU
