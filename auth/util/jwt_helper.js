@@ -9,7 +9,7 @@ module.exports = {
       const secret = process.env.ACCESS_TOKEN_SECRET;
       const options = {
         audience: `${userId}`,
-        expiresIn: '10m',
+        expiresIn: process.env.ACCESS_TOKEN_SECRET_EXPIRES_IN,
         issuer: 'localhost',
       };
       jwt.sign(payload, secret, options, (err, token) => {
@@ -45,7 +45,7 @@ module.exports = {
       const secret = process.env.REFRESH_ACCESS_TOKEN_SECRET;
       const options = {
         audience: `${userId}`,
-        expiresIn: '20m',
+        expiresIn: process.env.REFRESH_TOKEN_SECRET_EXPIRES_IN,
         issuer: 'localhost',
       };
       jwt.sign(payload, secret, options, async (err, token) => {
