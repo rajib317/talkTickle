@@ -1,8 +1,7 @@
-const { Sequelize } = require('sequelize');
+import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize('talk_tickle_post', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
 });
-
-module.exports = sequelize;
+export default sequelize;
